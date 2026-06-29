@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard Administrativo & Sistema CRUD — Case Study</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    :root{ --bg:#000; --text:#e3e2e2; --lime:#c3f400; --lime-strong:#abd600; --panel:rgba(255,255,255,0.03);} 
+    html,body{height:100%;}
+    body{background:var(--bg);color:var(--text);font-family:Inter, sans-serif;}
+    .glass-panel{background:var(--panel);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.06);}
+    .neon-button{background:var(--lime);color:#161e00;transition:all .2s;padding-left:1rem;padding-right:1rem;border-radius:16px;box-shadow:0 8px 20px rgba(195,244,0,0.18)}
+    .neon-button:hover{background:var(--lime-strong);box-shadow:0 10px 28px rgba(171,214,0,0.28);transform:translateY(-2px)}
+    .tech-chip{background:#121414;border:1px solid rgba(255,255,255,0.05);color:#c8c6c5;}
+    .container{max-width:1200px;margin:0 auto;padding:1.5rem}
+    .muted{color:rgba(227,226,226,0.75)}
+    .mockup-container{background:linear-gradient(135deg,#0e0f10,#151616);border:1px solid rgba(255,255,255,0.08);border-radius:1.5rem;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.4);position:relative;}
+    .mockup-container::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(195,244,0,0.03) 0%,transparent 50%);pointer-events:none;}
+    .mockup-img{width:100%;height:auto;display:block;object-fit:cover;}
+    .mockup-container-centered{max-width:900px;margin:0 auto;}
+    .mockup-container-full{width:100%;}
+    .feature-list{list-style:none;padding:0;margin:0;}
+    .feature-list li{display:flex;align-items:start;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+    .feature-list li:last-child{border-bottom:none;}
+    .feature-bullet{width:8px;height:8px;background:var(--lime);border-radius:50%;flex-shrink:0;margin-top:6px;box-shadow:0 0 10px rgba(195,244,0,0.5);}
+    .code-editor{background:#0d0e0f;border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.3);max-height:500px;}
+    .code-editor-header{background:#151616;padding:0.75rem 1rem;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;gap:0.5rem;align-items:center;}
+    .code-dot{width:12px;height:12px;border-radius:50%;background:#ff5f57;}
+    .code-dot:nth-child(2){background:#febc2e;}
+    .code-dot:nth-child(3){background:#28c840;}
+    .code-editor-content{padding:0;overflow-y:auto;max-height:450px;}
+    .secondary-button{background-color:transparent;color:var(--text);border-radius:16px;border:1px solid rgba(255,255,255,0.06);transition:background-color 150ms,color 150ms;}
+    .secondary-button:hover{background-color:rgba(255,255,255,0.04);color:var(--lime);}
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip-link:focus{position:fixed!important;left:1rem!important;top:1rem!important;width:auto!important;height:auto!important;padding:0.5rem 0.75rem;background:#0b0b0b;color:var(--lime);border-radius:8px;z-index:9999;box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+</style>
+</head>
+<body class="font-body-md text-body-md">
+    <a href="#content" class="skip-link">Saltar al contenido</a>
+<header class="p-4">
+    <a href="../index.html#projects" class="neon-button px-3 py-2 rounded-full inline-flex items-center gap-2">
+        <span aria-hidden>←</span>
+        <span>Volver a proyectos</span>
+    </a>
+</header>
+<main class="container" id="content">
+    <!-- SECCIÓN 1: ENCABEZADO (Hero del Proyecto) -->
+    <section class="mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="tech-chip px-4 py-2 rounded text-xs font-label-mono uppercase tracking-wider">React.js</span>
+            <span class="text-primary-fixed opacity-50">|</span>
+            <span class="tech-chip px-4 py-2 rounded text-xs font-label-mono uppercase tracking-wider">Tailwind CSS</span>
+            <span class="text-primary-fixed opacity-50">|</span>
+            <span class="tech-chip px-4 py-2 rounded text-xs font-label-mono uppercase tracking-wider">Supabase SDK</span>
+            <span class="text-primary-fixed opacity-50">|</span>
+            <span class="tech-chip px-4 py-2 rounded text-xs font-label-mono uppercase tracking-wider">State Management</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Dashboard de Administración &amp; Operaciones CRUD
+        </h1>
+        
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed mb-10">
+            Diseño y desarrollo de un panel de control privado e interactivo que permite gestionar de forma segura el catálogo de proyectos, procesar altas, bajas, modificaciones y controlar el estado de la aplicación en tiempo real.
+        </p>
+    </section>
+
+    <!-- SECCIÓN 2: EL FLUJO DE USUARIO Y LA INTERFAZ (UI/UX) -->
+    <section class="mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-primary-fixed mb-4 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">touch_app</span>
+                    Experiencia de Usuario
+                </h2>
+                <p class="text-on-surface-variant leading-relaxed">
+                    Centrada en la usabilidad con flujos de navegación limpios e intuitivos. Implementación de control de estados de carga (spinners/skeletons) al interactuar con la base de datos para proporcionar feedback visual inmediato durante las operaciones asíncronas.
+                </p>
+            </div>
+            
+            <div class="glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-primary-fixed mb-4 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+                    Seguridad y Accesos
+                </h2>
+                <p class="text-on-surface-variant leading-relaxed">
+                    Restricción de rutas mediante middleware de autenticación para que solo el administrador pueda realizar modificaciones críticas en el sistema. Implementación de tokens de sesión y verificación de permisos en cada operación sensible.
+                </p>
+            </div>
+        </div>
+        
+        <div class="mockup-container mockup-container-centered" style="max-width: 100%;">
+            <img src="../assets/imagenes/crud/dashboard.jpg" alt="Captura de la interfaz principal del panel de administración" class="mockup-img" style="max-width: 100%; height: auto;" onerror="this.style.display='none'" loading="lazy" decoding="async" />
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: COMPONENTES DEL CRUD (Crear, Leer, Actualizar, Borrar) -->
+    <section class="mb-12">
+        <div class="glass-panel p-8 rounded-2xl mb-8">
+            <h2 class="text-2xl font-bold text-primary-fixed mb-4 flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+                Componentes del CRUD
+            </h2>
+            <p class="text-on-surface-variant leading-relaxed text-lg">
+                Modularización de tarjetas y formularios de edición para que la manipulación de datos sea intuitiva y rápida. Cada operación CRUD está encapsulada en componentes reutilizables con validación integrada y manejo de errores centralizado.
+            </p>
+        </div>
+        
+        <div class="mockup-container" style="max-width: 630px; margin: 0 auto;">
+            <img src="../assets/imagenes/crud/modal.jpg" alt="Captura de la vista detallada de las tablas de gestión o modales de confirmación" class="mockup-img" style="max-width: 100%; height: auto;" onerror="this.style.display='none'" loading="lazy" decoding="async" />
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: CARACTERÍSTICAS DE INTERFAZ Y CÓDIGO -->
+    <section class="mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-primary-fixed mb-6 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Características Clave
+                </h2>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Manejo de estados globales optimizado con React Context</span>
+                    </li>
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Formularios con validación interactiva en tiempo real</span>
+                    </li>
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Modales de confirmación para acciones destructivas</span>
+                    </li>
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Interfaz 100% responsiva para pantallas táctiles</span>
+                    </li>
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Sincronización automática con Supabase en tiempo real</span>
+                    </li>
+                    <li>
+                        <span class="feature-bullet"></span>
+                        <span class="text-on-surface-variant">Sistema de notificaciones toast para feedback de usuario</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="code-editor">
+                <div class="code-editor-header">
+                    <span class="code-dot"></span>
+                    <span class="code-dot"></span>
+                    <span class="code-dot"></span>
+                </div>
+                <div class="code-editor-content">
+                    <pre class="text-sm" style="color: #cfeab0; background: #0d0e0f; padding: 1rem; margin: 0; overflow-x: auto;"><code><span style="color: #c678dd;">import</span> { useState } <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'react'</span>
+<span style="color: #c678dd;">import</span> { supabase } <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'@/lib/supabase'</span>
+
+<span style="color: #c678dd;">export default function</span> <span style="color: #61afef;">ProjectForm</span>({ project, onSuccess }) {
+  <span style="color: #c678dd;">const</span> [formData, setFormData] = <span style="color: #61afef;">useState</span>({
+    name: project?.name || <span style="color: #98c379;">''</span>,
+    description: project?.description || <span style="color: #98c379;">''</span>,
+    image_url: project?.image_url || <span style="color: #98c379;">''</span>
+  })
+  <span style="color: #c678dd;">const</span> [loading, setLoading] = <span style="color: #61afef;">useState</span>(<span style="color: #d19a66;">false</span>)
+
+  <span style="color: #c678dd;">const</span> <span style="color: #61afef;">handleSubmit</span> = <span style="color: #c678dd;">async</span> (e) => {
+    e.<span style="color: #61afef;">preventDefault</span>()
+    setLoading(<span style="color: #d19a66;">true</span>)
+
+    <span style="color: #c678dd;">const</span> { error } = project
+      ? <span style="color: #c678dd;">await</span> supabase
+          .<span style="color: #61afef;">from</span>(<span style="color: #98c379;">'projects'</span>)
+          .<span style="color: #61afef;">update</span>(formData)
+          .<span style="color: #61afef;">eq</span>(<span style="color: #98c379;">'id'</span>, project.id)
+      : <span style="color: #c678dd;">await</span> supabase
+          .<span style="color: #61afef;">from</span>(<span style="color: #98c379;">'projects'</span>)
+          .<span style="color: #61afef;">insert</span>([formData])
+
+    setLoading(<span style="color: #d19a66;">false</span>)
+
+    <span style="color: #c678dd;">if</span> (!error) {
+      <span style="color: #61afef;">onSuccess</span>()
+    }
+  }
+
+  <span style="color: #c678dd;">return</span> (
+    <span style="color: #e06c75;">&lt;</span><span style="color: #e5c07b;">form</span> <span style="color: #d19a66;">onSubmit</span><span style="color: #56b6c2;">=</span><span style="color: #98c379;">{handleSubmit}</span><span style="color: #e06c75;">&gt;</span>
+      <span style="color: #5c6370; font-style: italic;">{/* Form fields */}</span>
+    <span style="color: #e06c75;">&lt;/</span><span style="color: #e5c07b;">form</span><span style="color: #e06c75;">&gt;</span>
+  )
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 text-center muted pb-8">
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../index.html#projects" class="neon-button px-6 py-3 rounded-full inline-flex items-center gap-2">
+                <span aria-hidden>←</span>
+                <span>Volver a proyectos</span>
+            </a>
+        </div>
+        <p class="text-xs text-on-surface-variant mt-4 opacity-60">
+            * Maquetación puramente visual sin funcionalidad backend
+        </p>
+    </footer>
+</main>
+</body>
+</html>

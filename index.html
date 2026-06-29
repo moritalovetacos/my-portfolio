@@ -1,0 +1,1113 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Joel Mora | Desarrollador Full-Stack & Entusiasta de Seguridad</title>
+<!-- Fonts & Icons (single optimized call) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+<!-- Favicon (neon green SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23c3f400'/%3E%3C/svg%3E" />
+<!-- Open Graph / Social preview -->
+<meta property="og:title" content="Joel Mora | Desarrollador Full-Stack" />
+<meta property="og:description" content="Desarrollador Full-Stack especializado en React, Node y soluciones seguras. Portafolio de proyectos enfocados en UX y arquitectura escalable." />
+<meta property="og:image" content="https://lh3.googleusercontent.com/aida-public/AB6AXuC5cNMDaon7z3CQ_NCOPCJMUrVKX8BMRJ23eamy2K69InlGVbLUVrffVaGn26vW_SqyZA5b5AJ8Nz1Ki0a8-VNNgpjuOLaK4VUSvQ7yJk8uYbHqIkqDE5ZWsGZVHZ1_wCtCD6Vn5I_McTaW4FyTL0URhkuSeQ6DXb73J8txEQjATG-KVnqYouhCwGZltWv2RW0x0seHHoTp9lNeOOByB735WBpR5TqokSGWkw4XpWeiAvVq1HbNfPbkQ8oqHw1173tM1OmU7Eiwg0g" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#e3e2e2",
+                    "on-background": "#e3e2e2",
+                    "secondary-container": "#4a4949",
+                    "on-secondary-fixed-variant": "#474646",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline": "#8e9379",
+                    "background": "#121414",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "inverse-primary": "#506600",
+                    "surface-container": "#1e2020",
+                    "tertiary-container": "#e2e2e2",
+                    "inverse-surface": "#e3e2e2",
+                    "surface-bright": "#383939",
+                    "surface": "#121414",
+                    "on-primary-fixed": "#161e00",
+                    "inverse-on-surface": "#2f3131",
+                    "on-surface-variant": "#c4c9ac",
+                    "on-secondary-container": "#bab8b7",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "on-tertiary": "#303030",
+                    "tertiary": "#ffffff",
+                    "surface-tint": "#abd600",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#343535",
+                    "on-tertiary-container": "#646464",
+                    "surface-container-lowest": "#0d0e0f",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#c3f400",
+                    "on-secondary": "#313030",
+                    "surface-container-low": "#1a1c1c",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "surface-variant": "#343535",
+                    "secondary": "#c8c6c5",
+                    "on-primary-container": "#556d00",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "on-primary": "#283500",
+                    "primary": "#ffffff",
+                    "outline-variant": "#444933",
+                    "surface-dim": "#121414",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed": "#c3f400",
+                    "surface-container-high": "#292a2a",
+                    "tertiary-fixed": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "primary-fixed-dim": "#abd600",
+                    "on-primary-fixed-variant": "#3c4d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-padding-mobile": "64px",
+                    "container-max": "1280px",
+                    "section-padding-desktop": "120px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter", "sans-serif"],
+                    "label-mono": ["JetBrains Mono", "monospace"],
+                    "headline-lg": ["Geist", "sans-serif"],
+                    "headline-lg-mobile": ["Geist", "sans-serif"],
+                    "headline-xl": ["Geist", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+</script>
+<style>
+        :root {
+            --bg: #000000;
+            --text: #e3e2e2;
+            --lime: #c3f400;
+            --lime-strong: #abd600;
+            --panel: rgba(255,255,255,0.03);
+            --muted: rgba(227,226,226,0.75);
+            --glass-border: rgba(255,255,255,0.1);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-neon: 0 10px 30px rgba(195,244,0,0.25);
+        }
+        body {
+            background-color: #000000;
+            color: #e3e2e2;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .glass-panel:hover {
+            border-color: rgba(204, 255, 0, 0.4);
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.1);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+
+        /* Primary CTA */
+        .neon-button {
+            background-color: var(--lime);
+            color: #161e00;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            border-radius: var(--radius-lg);
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-neon);
+        }
+
+        .input-error {
+            outline: 2px solid rgba(248, 113, 113, 0.95);
+            outline-offset: 3px;
+            box-shadow: 0 0 16px rgba(248, 113, 113, 0.6);
+            background-color: rgba(248, 113, 113, 0.12);
+        }
+
+        #contact-form input:invalid,
+        #contact-form textarea:invalid {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        #alert-container {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.72);
+            padding: 1.5rem;
+        }
+
+        #alert-container.active {
+            display: flex;
+        }
+
+        .alert-box {
+            width: min(100%, 34rem);
+            background: rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(248, 113, 113, 0.95);
+            box-shadow: 0 0 40px rgba(248, 113, 113, 0.35);
+            padding: 1.75rem;
+            border-radius: 1.5rem;
+            color: #e3e2e2;
+            text-align: left;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .alert-box.error {
+            border-color: rgba(248, 113, 113, 1);
+            box-shadow: 0 0 40px rgba(248, 113, 113, 0.35);
+        }
+
+        .alert-box.success {
+            border-color: rgba(34, 197, 94, 0.95);
+            box-shadow: 0 0 40px rgba(34, 197, 94, 0.35);
+        }
+
+        .alert-box h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+        }
+
+        .alert-box button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #e3e2e2;
+            padding: 0.5rem 0.75rem;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .alert-box button:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .neon-button:hover {
+            background-color: var(--lime-strong);
+            box-shadow: 0 0 30px rgba(171,214,0,0.45);
+            transform: translateY(-2px);
+        }
+
+        .neon-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Secondary CTA */
+        .secondary-button {
+            background-color: transparent;
+            color: var(--text);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: background-color 0.18s ease, color 0.18s ease;
+        }
+
+        .secondary-button:hover {
+            background-color: rgba(255,255,255,0.04);
+            color: var(--lime);
+        }
+
+        /* Tertiary / accent CTA (used for mockup contact) */
+        .contact-illuminate {
+            transition: box-shadow 0.22s ease, background-color 0.18s ease, color 0.18s ease, transform 0.12s ease, border-color 0.12s ease;
+            border-radius: var(--radius-lg);
+        }
+
+        .contact-illuminate:hover {
+            background-color: var(--lime);
+            color: #071000 !important;
+            box-shadow: 0 10px 30px rgba(195,244,0,0.45), 0 2px 6px rgba(0,0,0,0.25);
+            border-color: rgba(195,244,0,0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Ensure the label itself lights up green and gets a neon text glow */
+        .contact-illuminate:hover {
+            color: #c3f400 !important;
+            text-shadow: 0 0 8px rgba(195,244,0,0.95), 0 0 22px rgba(195,244,0,0.35);
+        }
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: calc(100vh - 88px);
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        .hero-intro {
+            max-width: 830px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-title {
+            margin: 0;
+        }
+
+        .hero-subtitle {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .hero-copy {
+            margin: 0;
+        }
+
+        .hero-actions {
+            align-items: flex-start;
+        }
+
+        .hero-mockup-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .hero-mockup {
+            min-height: 360px;
+            border-radius: 24px;
+        }
+
+        .hero-mockup-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 2.25rem;
+            }
+
+            .hero-mockup {
+                min-height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: auto;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            .hero-content {
+                gap: 2.5rem;
+            }
+
+            .hero-intro {
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-mockup {
+                min-height: 260px;
+            }
+        }
+
+        .neon-border-bottom {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .neon-border-bottom:focus-within {
+            border-bottom-color: #c3f400;
+        }
+        
+        .neon-border-bottom::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #c3f400;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px #c3f400;
+        }
+
+        .neon-border-bottom:focus-within::after {
+            width: 100%;
+        }
+
+        .tech-chip {
+            background: #121414;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #c8c6c5;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 5 - 24px * 5)); }
+        }
+
+        /* Subtle animations and reduced-motion support */
+        :root {
+            --motion-fast: 150ms;
+            --motion-medium: 300ms;
+            --motion-slow: 600ms;
+        }
+
+        /* make component entrance animations subtler */
+        .transition-all.duration-1000 { transition-duration: var(--motion-slow); }
+        .translate-y-10 { transform: translateY(6px); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-track { animation: none !important; }
+            * { transition-duration: 0s !important; animation-duration: 0s !important; }
+            .translate-y-10, .hero-mockup, .group-hover\:scale-110 { transform: none !important; }
+            .neon-button:hover, .contact-illuminate:hover { transform: none !important; box-shadow: none !important; }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Animated nav underline (desktop) */
+        #nav-links {
+            position: relative;
+        }
+
+        #nav-underline {
+            position: absolute;
+            bottom: 6px;
+            left: 0;
+            height: 3px;
+            background: #c3f400;
+            border-radius: 999px;
+            transition: left 300ms cubic-bezier(.2,.8,.2,1), width 300ms cubic-bezier(.2,.8,.2,1), opacity 200ms;
+            will-change: left, width;
+            opacity: 0;
+        }
+
+        @media (max-width: 767px) {
+            #nav-underline { display: none; }
+        }
+        /* Footer underline (desktop) */
+        #footer-links { position: relative; }
+        #footer-underline {
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            height: 3px;
+            background: #c3f400;
+            border-radius: 999px;
+            transition: left 300ms cubic-bezier(.2,.8,.2,1), width 300ms cubic-bezier(.2,.8,.2,1), opacity 200ms;
+            will-change: left, width;
+            opacity: 0;
+        }
+        /* Mobile menu styles */
+        #mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        .nav-link-mobile { color: #e3e2e2; text-decoration: none; display: inline-block; width: auto; align-self: flex-start; }
+        .nav-link-mobile:hover { color: #c3f400; }
+        @media (min-width: 768px) {
+            #mobile-menu { display: none; }
+        }
+
+        /* Accessibility & touch targets */
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+        .skip-link:focus {
+            position: fixed !important;
+            left: 1rem !important;
+            top: 1rem !important;
+            width: auto !important;
+            height: auto !important;
+            padding: 0.5rem 0.75rem;
+            background: #0b0b0b;
+            color: #c3f400;
+            border-radius: 8px;
+            z-index: 9999;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+
+        :where(a,button,input,textarea):focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(195,244,0,0.14);
+            border-radius: 8px;
+        }
+
+        /* Ensure tappable targets */
+        .neon-button, .secondary-button, .contact-illuminate, .nav-link-mobile, .nav-link {
+            min-height: 44px;
+            padding-top: 0.6rem;
+            padding-bottom: 0.6rem;
+        }
+
+        /* Inline field error */
+        .field-error { display: none; color: #ffb4ab; font-size: 0.9rem; margin-top: 0.25rem; }
+        .field-error.active { display: block; }
+
+        /* Button spinner */
+        .btn-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0,0,0,0.18);
+            border-top-color: rgba(0,0,0,0.65);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-body-md text-body-md">
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+<!-- Header / Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10 shadow-[0_0_15px_rgba(204,255,0,0.2)]">
+<nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg-mobile md:font-headline-lg font-bold text-primary tracking-tighter">
+                Joel Mora
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+</div>
+<div id="nav-links" class="hidden md:flex gap-8 items-center relative">
+<a class="nav-link text-primary-fixed font-bold pb-1 hover:text-primary-fixed hover:drop-shadow-[0_0_8px_rgba(204,255,0,0.6)] transition-all duration-300" href="#home">Inicio</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-fixed hover:drop-shadow-[0_0_8px_rgba(204,255,0,0.6)] transition-all duration-300" href="#about">Acerca de</a>
+<a class="nav-link text-on-surface-variant font-medium hover:text-primary-fixed hover:drop-shadow-[0_0_8px_rgba(204,255,0,0.6)] transition-all duration-300" href="#projects">Proyectos</a>
+<a class="neon-button px-6 py-2 rounded-full font-bold" href="#contact" aria-label="Ir a sección de contacto">Contáctame</a>
+<span id="nav-underline" aria-hidden="true"></span>
+</div>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Mobile menu button and panel -->
+<button id="mobile-menu-button" class="md:hidden text-primary absolute right-6 top-4 z-60" aria-expanded="false" aria-controls="mobile-menu">
+    <span id="mobile-menu-icon" class="material-symbols-outlined">menu</span>
+</button>
+<div id="mobile-menu" class="md:hidden fixed inset-x-0 top-[64px] z-50 transform -translate-y-2 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="bg-background/95 backdrop-blur-sm border-t border-white/5 glass-panel p-6 rounded-b-2xl mx-4">
+        <nav class="flex flex-col relative" aria-label="Menú móvil">
+            <a href="#home" class="nav-link-mobile text-on-surface-variant py-3 px-4 text-lg">Inicio</a>
+            <a href="#about" class="nav-link-mobile text-on-surface-variant py-3 px-4 text-lg">Acerca de</a>
+            <a href="#projects" class="nav-link-mobile text-on-surface-variant py-3 px-4 text-lg">Proyectos</a>
+            <div class="mt-4 px-4">
+                <a href="#contact" class="neon-button w-full text-center px-6 py-3 rounded-full font-bold text-lg" aria-label="Ir a sección de contacto">Contáctame</a>
+            </div>
+        </nav>
+        
+    </div>
+</div>
+</header>
+<main id="main-content">
+<!-- Hero Section -->
+<section class="hero-section relative min-h-screen pt-24 px-gutter overflow-hidden bg-surface-container-lowest" id="home">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(195,244,0,0.16),_transparent_23%),radial-gradient(circle_at_bottom_right,_rgba(171,214,0,0.10),_transparent_20%)]"></div>
+    <div class="hero-content max-w-container-max mx-auto w-full relative z-10 flex flex-col gap-12">
+        <div class="hero-about grid gap-8 items-center md:grid-cols-[1.3fr_0.9fr]">
+            <div class="space-y-6 max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary-fixed/20 text-primary-fixed font-label-mono text-label-mono">
+                    <span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+                    DISPONIBLE PARA NUEVOS PROYECTOS
+                </div>
+                <h1 class="font-headline-xl text-headline-xl md:text-[72px] lg:text-[84px] text-white leading-[1.0] md:leading-[0.95]">
+                    Joel <span class="text-primary-fixed">Mora</span>
+                </h1>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    Desarrollador Web &amp; Android
+                </h2>
+                <p class="text-on-surface-variant text-xl md:text-2xl font-body-md leading-relaxed">
+                    Diseño y desarrollo de interfaces web modernas, accesibles y adaptables, optimizando la experiencia en escritorio y móvil.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a class="neon-button px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 group" href="#projects">
+                        Ver proyectos
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </a>
+                    <a class="secondary-button px-8 py-4 rounded-full border border-white/10 font-bold text-lg hover:bg-white/5 transition-colors" href="#contact" aria-label="Ir a sección de contacto">
+                        Contáctame
+                    </a>
+                </div>
+            </div>
+            <div class="hero-profile hidden md:flex justify-center">
+                <div class="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.35)] w-full max-w-[360px] aspect-[4/5]">
+                    <img src="assets/imagenes/mora.jpeg" alt="Foto de perfil de Joel Mora" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                </div>
+            </div>
+        </div>
+
+        </div></section>
+
+<!-- Mockup Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter">
+<div class="max-w-container-max mx-auto">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="w-full md:w-1/2 space-y-6">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-[10px] uppercase tracking-[0.55em] text-primary-fixed px-3 py-1 rounded-full border border-primary-fixed">HTML5</span>
+                <span class="text-[10px] uppercase tracking-[0.55em] text-primary-fixed px-3 py-1 rounded-full border border-primary-fixed">CSS3</span>
+                <span class="text-[10px] uppercase tracking-[0.55em] text-primary-fixed px-3 py-1 rounded-full border border-primary-fixed">JavaScript</span>
+            </div>
+            <h3 class="text-5xl font-bold text-white mb-4 leading-tight">Diseño de <span class="text-primary-fixed">Interfaz</span> Moderno y Responsivo</h3>
+            <p class="text-base leading-relaxed text-on-surface-variant mb-8">Diseño y desarrollo de interfaces web <span class="text-primary-fixed">modernas</span>, <span class="text-primary-fixed">accesibles</span> y <span class="text-primary-fixed">adaptables</span>, optimizando la experiencia en escritorio y móvil.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects" class="bg-primary-fixed text-background px-6 py-3 rounded-full font-semibold flex items-center gap-2 shadow-[0_10px_30px_rgba(195,244,0,0.25)] hover:shadow-[0_10px_30px_rgba(195,244,0,0.4)] transition-shadow">Ver proyectos <span class="material-symbols-outlined">arrow_forward</span></a>
+                <a href="#contact" class="contact-illuminate border border-on-surface-variant text-on-surface-variant px-6 py-3 rounded-full font-semibold hover:bg-white/5 transition-colors" aria-label="Ir a sección de contacto">Contáctame</a>
+            </div>
+        </div>
+        <div class="w-full md:w-[570px]">
+            <div class="overflow-hidden rounded-[32px] border border-white/10 shadow-[0_40px_90px_rgba(0,0,0,0.3)] bg-white">
+                <div class="bg-[#020616] relative overflow-hidden">
+                    <img src="assets/imagenes/Aromo.jpg" alt="Café Aromo Landing Page" class="w-full object-contain object-center" onerror="this.style.display='none'" loading="lazy" decoding="async" />
+                </div>
+                <div class="p-6 bg-white">
+                    <p class="text-[10px] uppercase tracking-[0.55em] text-slate-500 mb-2">Café Aromo</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Landing page moderna y responsive</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-white shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+                            <span class="material-symbols-outlined text-2xl">web</span>
+                        </div>
+                        <p class="text-sm text-slate-600">Interfaz clara, navegación fluida y diseño adaptable.</p>
+                    </div>
+                    <a href="https://moritalovetacos.github.io/cafe-aromo-frontend/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-slate-800 transition-colors shadow-[0_8px_24px_rgba(15,23,42,0.25)]">
+                        Live Demo
+                        <span class="material-symbols-outlined text-base">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter" id="about">
+<div class="max-w-container-max mx-auto">
+<div class="glass-panel p-6 md:p-16 rounded-[2rem] relative overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+<div class="col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Más que un desarrollador</h2>
+<div class="w-24 h-1 bg-primary-fixed rounded-full"></div>
+</div>
+<div class="md:col-span-2 space-y-6">
+                            <p class="text-lg md:text-2xl text-on-surface leading-relaxed md:leading-relaxed max-w-full break-words">
+                                Desarrollador <span class="text-primary-fixed font-bold">Full Stack</span> Jr. enfocado en la creación de aplicaciones <span class="text-primary-fixed font-bold">web dinámicas</span>, eficientes y escalables. Especializado en traducir <span class="text-primary-fixed font-bold">problemas lógicos</span> en <span class="text-primary-fixed font-bold">código limpio</span> y estructurado, abarcando desde interfaces de usuario responsivas hasta el diseño de bases de datos relacionales y <span class="text-primary-fixed font-bold">backend</span> sin servidor. Capacidad demostrada para integrar servicios en la nube, optimizar <span class="text-primary-fixed font-bold">flujos de datos</span> y resolver problemas de persistencia local. Busco incorporarme a un equipo de ingeniería como desarrollador Junior o Aprendiz para aportar soluciones técnicas sólidas <span class="text-primary-fixed font-bold">desde el primer día</span>.
+                            </p>
+<div class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 pt-6">
+<div class="glass-panel p-6 md:p-8 rounded-3xl border border-white/10 flex flex-col md:justify-between gap-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div>
+<h4 class="text-primary font-bold text-2xl leading-tight">Protección de datos y privacidad para todos</h4>
+<p class="text-on-surface-variant mt-4 text-sm leading-6">Certificación enfocada en prácticas de privacidad, protección de datos y cumplimiento ético.</p>
+</div>
+</div>
+                    <a class="neon-button btn-portfolio w-max px-5 py-3 rounded-full text-sm font-bold" href="assets/documentos/certificado.pdf" target="_blank" rel="noopener">Ver Credencial</a>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<div class="glass-panel p-6 rounded-3xl border border-white/10">
+<h4 class="text-primary font-bold mb-2 uppercase tracking-widest text-sm">Especialidad</h4>
+<p class="text-on-surface-variant">Desarrollo Full-Stack</p>
+</div>
+<div class="glass-panel p-6 rounded-3xl border border-white/10">
+<h4 class="text-primary font-bold mb-2 uppercase tracking-widest text-sm">Enfoque</h4>
+<p class="text-on-surface-variant">Aplicaciones web & Arquitectura sin servidor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technologies Carousel -->
+<section class="py-section-padding-mobile md:py-24 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter mb-12">
+<h3 class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-widest">Stack Tecnológico</h3>
+</div>
+<div class="relative flex">
+<div class="carousel-track">
+<!-- Repeated items for continuous scroll -->
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<h4 class="font-bold">Supabase</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Servicio Backend & Autenticación</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">integration_instructions</span>
+<h4 class="font-bold">React.js</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Interfaz UI & componentes reactivos</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">style</span>
+<h4 class="font-bold">Tailwind CSS</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Diseño utilitario y estilos modernos</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h4 class="font-bold">Node.js</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Runtime backend y APIs escalables</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">web</span>
+<h4 class="font-bold">Bootstrap 5</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Interfaces responsive con componentes listos</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed">html</span>
+<h4 class="font-bold">HTML5/CSS3</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Estructura semántica y estilos sólidos</p>
+</div>
+<!-- Clones for loop -->
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">cloud</span>
+<h4 class="font-bold">Supabase</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Servicio Backend & Autenticación</p>
+</div>
+<div class="flex-shrink-0 w-64 glass-panel p-6 rounded-xl flex flex-col items-center gap-4 text-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed" style="font-variation-settings: 'FILL' 1;">integration_instructions</span>
+<h4 class="font-bold">React.js</h4>
+<p class="text-sm text-on-surface-variant font-body-sm">Interfaz UI & componentes reactivos</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mobile menu script -->
+<script>
+    (function(){
+        const btn = document.getElementById('mobile-menu-button');
+        const panel = document.getElementById('mobile-menu');
+        const icon = document.getElementById('mobile-menu-icon');
+        const links = panel ? panel.querySelectorAll('.nav-link-mobile') : [];
+        
+
+        function openMenu() {
+            panel.classList.add('open');
+            btn.setAttribute('aria-expanded','true');
+            icon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            panel.classList.remove('open');
+            btn.setAttribute('aria-expanded','false');
+            icon.textContent = 'menu';
+            document.body.style.overflow = '';
+        }
+        btn.addEventListener('click', function(){
+            if(panel.classList.contains('open')) closeMenu(); else openMenu();
+        });
+
+        // close menu on click for mobile links
+        links.forEach(link => {
+            link.addEventListener('click', () => closeMenu());
+        });
+
+        // close menu on resize to desktop
+        window.addEventListener('resize', ()=>{
+            if(window.innerWidth >= 768 && panel.classList.contains('open')) closeMenu();
+        });
+    })();
+</script>
+<!-- Featured Projects Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter" id="projects">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Proyectos Destacados</h2>
+<p class="text-on-surface-variant max-w-md mt-4">Soluciones técnicas desarrolladas con precisión, seguridad y una experiencia de usuario optimizada.</p>
+</div>
+<div class="hidden md:block">
+<span class="font-label-mono text-label-mono text-primary-fixed uppercase tracking-[0.2em]">Creando Soluciones Digitales</span>
+</div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="glass-panel rounded-3xl overflow-hidden flex flex-col group">
+<div class="aspect-video relative overflow-hidden bg-surface-container-high">
+<div role="img" aria-label="Captura del Catálogo de Aplicaciones Estudiantiles con acentos verde neón" class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A clean UI/UX screenshot of a modern student application catalog dashboard. The design features a dark theme with electric lime accents, organized grid layouts, and semi-transparent cards. Subtle glassmorphism effects and sharp typography are visible across the interface, highlighting the database integration with Supabase." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACZG0ZH3vpLDoL7Y0XJU7HirrtRdXdXrsqB4MXwgl5UgdofzL--1LFza9_2uinDya_wDvXCbdzxBgX5LucVKgiz3JOFO3A9VzppK3PNp2kPqX18_2Xg-bt3UM9nz-g6VHWzSVrb7-JNbaQIkDzeAZ1Fv-rvWlRrJ2f3Pn_PZCXc9Ak0cslCaHiEcgY0niofZdBaaTWgL5tjY-SNAK38anMTecQf2YHqhGzkcTYa6PKqAPHEOXLOGHcscBDfqJMV8C2nY4gC4PT6Vc')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex gap-2 mb-4">
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">Supabase</span>
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">Next.js</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">Catálogo de Aplicaciones Estudiantiles</h3>
+<p class="text-on-surface-variant font-body-sm mb-8 flex-1">
+                                Una plataforma centralizada para la gestión y descubrimiento de proyectos académicos, integrando autenticación segura y base de datos en tiempo real.
+                            </p>
+<div class="flex gap-4">
+<a class="neon-button px-4 py-2 rounded font-bold text-sm flex-1 text-center" href="proyectos/supabase.html">Echa un vistazo</a>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-panel rounded-3xl overflow-hidden flex flex-col group">
+<div class="aspect-video relative overflow-hidden bg-surface-container-high">
+<div role="img" aria-label="Vista del Dashboard Administrativo con gráficos y paneles" class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Una interfaz administrativa moderna con gráficos y paneles claros en un esquema oscuro y acentos verde neón. El diseño refleja control de datos, estados y métricas en un ambiente profesional y dinámico." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpyRdAlilQngppsEL4Sj3E6vYMhkx5_9j-E6C011ujH61ayayxPNBse1ckOS8g-pUe7-tm9p1IOfS8eY_aZA-BU8NiImP1iNGr5lpplse-UK_6DwkCwRn3KCY2CpVBYL47ld4vcpH6fCCBcol72qYy1rjzdLu50VxRtjAXni5Ukyqr5sUUF1NJfCHak7yFVcq9NOpXoHqf5xhNK1i05IcWI2dE4lp3ASp1qUdeJEFz4xWW-QWjdC243N2YiUGtmUzBQ5jszJjwsVA')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex gap-2 mb-4">
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">React.js</span>
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">Node.js</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">Dashboard Administrativo</h3>
+<p class="text-on-surface-variant font-body-sm mb-8 flex-1">
+                                Interfaz de administración enfocada en CRUD de datos y gestión de estados con flujos claros y controlados.
+                            </p>
+<div class="flex gap-4">
+<a class="neon-button px-4 py-2 rounded font-bold text-sm flex-1 text-center" href="proyectos/crud.html">Echa un vistazo</a>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-panel rounded-3xl overflow-hidden flex flex-col group">
+<div class="aspect-video relative overflow-hidden bg-surface-container-high">
+<div role="img" aria-label="Vista de Landing Page de Alta Conversión con animaciones y secciones de conversión" class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Una landing page inmersiva con animaciones fluidas y secciones de conversión diseñadas para captar la atención. El diseño combina tipografía grande, microinteracciones y un esquema de color oscuro con acentos verde neón." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDd-Mudwet7hDbCZt4ASZucAuc1hgA3v-Df24L6KsQom9a6TPAys9sCNn-kQVfUHnHiOzO6dXju6N33FGtUT5SDeB8sBsV0GEB5YJkl_mAOaahdti9bbwezIzndLIMou3WXlUYBJYQPBanUCkFVGSnf4adcTObrmGNpsSCTGWL-qfCWPsSRVG3sAN0_sJ1xlmjP8OqpV6A5_ZUrVf1yuxmWeXTVw6WtGaDQ5t98gGfKlZhtSBs1-jJPto0576QgEAlaRZT3ybDXliA')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-8 flex-1 flex flex-col">
+<div class="flex gap-2 mb-4">
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">UI/UX</span>
+<span class="tech-chip px-3 py-1 rounded text-[10px] font-label-mono uppercase">Animaciones</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">Landing Page de Alta Conversión</h3>
+<p class="text-on-surface-variant font-body-sm mb-8 flex-1">
+                                Experiencia de UI inmersiva centrada en animaciones y secciones de conversión para maximizar el engagement y las tasas de registro.
+                            </p>
+<div class="flex gap-4">
+<a class="neon-button px-4 py-2 rounded font-bold text-sm flex-1 text-center" href="proyectos/aromo.html">Echa un vistazo</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter relative" id="contact">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">¿Tienes un proyecto en mente?</h2>
+<p class="text-on-surface-variant text-lg">Hablemos sobre cómo puedo ayudarte a construir una solución robusta, segura y escalable.</p>
+</div>
+<div class="max-w-2xl mx-auto glass-panel p-8 md:p-12 rounded-[2rem]">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-8" id="contact-form">
+<!-- Web3Forms Access Key -->
+<input type="hidden" name="access_key" value="c640a72f-c4ab-4307-820d-9695532ef636">
+
+<div class="grid md:grid-cols-2 gap-8">
+<div class="neon-border-bottom">
+<label class="block font-label-mono text-label-mono text-primary-fixed-dim uppercase mb-2">Nombre</label>
+<input type="text" id="nombre" name="nombre" class="w-full bg-transparent border-none p-0 pb-3 text-primary focus:ring-0 placeholder:text-surface-container-highest" placeholder="Juan Perez" required maxlength="50"/>
+</div>
+<div class="neon-border-bottom">
+<label class="block font-label-mono text-label-mono text-primary-fixed-dim uppercase mb-2">Email</label>
+<input type="email" id="email" name="correo" class="w-full bg-transparent border-none p-0 pb-3 text-primary focus:ring-0 placeholder:text-surface-container-highest" placeholder="ejemplo@gmail.com" required maxlength="100"/>
+</div>
+</div>
+<div class="neon-border-bottom">
+<label class="block font-label-mono text-label-mono text-primary-fixed-dim uppercase mb-2">Mensaje</label>
+<textarea id="mensaje" name="mensaje" class="w-full bg-transparent border-none p-0 pb-3 text-primary focus:ring-0 placeholder:text-surface-container-highest resize-none" placeholder="Cuéntame sobre tu proyecto..." rows="4" required maxlength="500"></textarea>
+</div>
+<button type="submit" class="neon-button w-full py-4 rounded-xl font-bold text-lg">Enviar Mensaje</button>
+<div class="mt-8 pt-8 border-t border-white/5 flex items-center justify-center gap-3 text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+                    <span>Comprometido con la seguridad y privacidad de tus datos.</span>
+                    <button id="copy-email-btn" data-email="joeelw117@gmail.com" class="neon-button ml-4 px-3 py-1 rounded text-sm" type="button">Copiar mi email</button>
+                </div>
+</form>
+</div>
+</section>
+<div id="alert-container" class="hidden"></div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-padding-mobile md:py-16 border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8 text-center md:text-left">
+<div class="space-y-4">
+<div class="font-label-mono text-label-mono uppercase tracking-widest text-primary">Joel Mora</div>
+
+</div>
+<div id="footer-links" class="flex flex-wrap justify-center gap-6 relative">
+    <a class="footer-link font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed transition-colors uppercase" href="https://github.com/moritalovetacos" target="_blank" rel="noopener">GitHub</a>
+    <a class="footer-link font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed transition-colors uppercase" href="https://www.linkedin.com/in/joel-mora-dev?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="footer-link btn-portfolio font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed transition-colors uppercase" href="assets/documentos/cv_joel.pdf" target="_blank" rel="noopener">Ver CV (PDF)</a>
+    <span id="footer-underline" aria-hidden="true"></span>
+</div>
+</div>
+</footer>
+<!-- Vanilla JS for simple interactions -->
+<script>
+    // Animated nav underline + smooth scroll + section-aware active state
+    (function(){
+        const navLinksContainer = document.getElementById('nav-links');
+        const navLinks = navLinksContainer ? Array.from(navLinksContainer.querySelectorAll('a.nav-link')) : [];
+        const underline = document.getElementById('nav-underline');
+
+        function positionUnderlineTo(el){
+            if(!el || !underline || !navLinksContainer) return;
+            const containerRect = navLinksContainer.getBoundingClientRect();
+            const rect = el.getBoundingClientRect();
+            const left = rect.left - containerRect.left;
+            underline.style.width = rect.width + 'px';
+            underline.style.left = left + 'px';
+            underline.style.opacity = '1';
+        }
+
+        function setActiveLinkByHash(hash){
+            if(!navLinks.length) return;
+            const target = navLinks.find(a => a.getAttribute('href') === hash) || navLinks[0];
+            navLinks.forEach(a => {
+                // toggle text color classes to preserve visual style
+                if(a === target){
+                    a.classList.remove('text-on-surface-variant');
+                    a.classList.add('text-primary-fixed');
+                } else {
+                    a.classList.remove('text-primary-fixed');
+                    a.classList.add('text-on-surface-variant');
+                }
+            });
+            positionUnderlineTo(target);
+        }
+
+        // Smooth scroll and click -> set active
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const targetEl = document.querySelector(href);
+                if(targetEl){
+                    e.preventDefault();
+                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                }
+                // if clicked link is inside nav, update underline
+                if(navLinksContainer && this.closest && this.closest('#nav-links')){
+                    // small timeout so layout stabilizes after scroll
+                    setTimeout(()=> setActiveLinkByHash(href), 60);
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations (original behavior)
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Observer to update active nav link based on viewport
+        if(navLinks.length){
+            const navObserverOptions = { root: null, threshold: 0.55 };
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        const id = entry.target.id ? ('#' + entry.target.id) : null;
+                        if(id) setActiveLinkByHash(id);
+                    }
+                });
+            }, navObserverOptions);
+            document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
+        }
+
+        // Recalculate on resize to keep underline aligned
+        window.addEventListener('resize', () => {
+            const currentHash = location.hash || '#home';
+            setTimeout(()=> setActiveLinkByHash(currentHash), 100);
+        });
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            const startHash = location.hash || '#home';
+            setTimeout(()=> setActiveLinkByHash(startHash), 80);
+        });
+
+    })();
+
+    // Copy email to clipboard button behavior
+    (function(){
+        const btn = document.getElementById('copy-email-btn');
+        if(!btn) return;
+        const originalText = btn.textContent;
+        btn.addEventListener('click', async () => {
+            const email = btn.getAttribute('data-email') || 'hello@joelmora.dev';
+            try{
+                await navigator.clipboard.writeText(email);
+                btn.textContent = 'Â¡Copiado!';
+                setTimeout(()=> btn.textContent = originalText, 1400);
+            }catch(e){
+                btn.textContent = 'Error';
+                setTimeout(()=> btn.textContent = originalText, 1400);
+            }
+        });
+    })();
+
+    // Footer underline behavior (hover + click animation similar to nav)
+    (function(){
+        const footerContainer = document.getElementById('footer-links');
+        const footerLinks = footerContainer ? Array.from(footerContainer.querySelectorAll('a.footer-link')) : [];
+        const footerUnderline = document.getElementById('footer-underline');
+        if(!footerContainer || !footerUnderline || !footerLinks.length) return;
+
+        function positionFooterUnderlineTo(el){
+            if(!el) return;
+            const containerRect = footerContainer.getBoundingClientRect();
+            const rect = el.getBoundingClientRect();
+            const left = rect.left - containerRect.left;
+            footerUnderline.style.width = rect.width + 'px';
+            footerUnderline.style.left = left + 'px';
+            footerUnderline.style.opacity = '1';
+        }
+
+        footerLinks.forEach(a => {
+            a.addEventListener('mouseenter', () => positionFooterUnderlineTo(a));
+            a.addEventListener('mouseleave', () => { footerUnderline.style.opacity = '0'; });
+            a.addEventListener('click', () => positionFooterUnderlineTo(a));
+        });
+
+        // Recalculate on resize to keep alignment
+        window.addEventListener('resize', () => { footerUnderline.style.opacity = '0'; });
+    })();
+
+    // Interactive Glow follow effect (optional desktop)
+    if (window.innerWidth > 768) {
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            // placeholder for optional glow effect
+        });
+    }
+    // Form handling for Web3Forms — inline validation, sending state
+    (function(){
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', function(e){
+            if (!form.checkValidity()){
+                e.preventDefault();
+                // show inline errors
+                Array.from(form.elements).forEach(el => {
+                    if((el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') && el.willValidate){
+                        let existing = el.parentNode.querySelector('.field-error');
+                        if(!el.checkValidity()){
+                            if(!existing){
+                                const msg = document.createElement('div');
+                                msg.className = 'field-error active';
+                                msg.textContent = el.validationMessage || 'Campo inválido';
+                                el.parentNode.appendChild(msg);
+                            } else { existing.textContent = el.validationMessage; existing.classList.add('active'); }
+                        } else if(existing){ existing.classList.remove('active'); }
+                    }
+                });
+                const firstInvalid = form.querySelector(':invalid');
+                if(firstInvalid) firstInvalid.focus();
+                return;
+            }
+            // show sending state and disable button to avoid duplicate submits
+            if(submitBtn){
+                submitBtn.disabled = true;
+                const orig = submitBtn.innerHTML;
+                submitBtn.dataset._orig = orig;
+                submitBtn.classList.add('sending');
+                submitBtn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span> Enviando…';
+                // if the page doesn't navigate (CORS or other), restore button after timeout
+                setTimeout(()=>{ if(submitBtn){ submitBtn.disabled=false; submitBtn.classList.remove('sending'); submitBtn.innerHTML=submitBtn.dataset._orig; } }, 8000);
+            }
+            // allow normal submission to Web3Forms
+        });
+
+        // remove error message on input
+        form.addEventListener('input', function(e){
+            const el = e.target;
+            if(!el) return;
+            const existing = el.parentNode ? el.parentNode.querySelector('.field-error') : null;
+            if(existing && el.checkValidity()) existing.classList.remove('active');
+        });
+    })();
+
+    // Copy email button functionality
+    (function(){
+        const copyEmailBtn = document.getElementById('copy-email-btn');
+        if (!copyEmailBtn) return;
+
+        copyEmailBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = this.getAttribute('data-email');
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = this.textContent;
+                this.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+        });
+    })();
+</script>
+</body></html>
